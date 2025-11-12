@@ -40,7 +40,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
-ROOT_URLCONF = "backend.urls"
+ROOT_URLCONF = "music_backend.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -55,15 +55,20 @@ TEMPLATES = [
         },
     },
 ]
-WSGI_APPLICATION = "backend.wsgi.application"
+WSGI_APPLICATION = "music_backend.wsgi.application"
 
 # --------------------
 # Database
 # --------------------
+# MySQL Database Configuration
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'music_app_db',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 # --------------------
